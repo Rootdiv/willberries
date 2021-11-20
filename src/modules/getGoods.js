@@ -1,5 +1,5 @@
 const getGoods = () => {
-  'use strict'
+  'use strict';
   const links = document.querySelectorAll('.navigation-link');
 
   const getData = () => {
@@ -7,7 +7,7 @@ const getGoods = () => {
       .then(response => response.json())
       .then(data => localStorage.setItem('goods', JSON.stringify(data)))
       .catch(err => console.error(err));
-  }
+  };
 
   links.forEach(link => {
     link.addEventListener('click', event => {
@@ -15,9 +15,9 @@ const getGoods = () => {
       getData();
       const data = JSON.parse(localStorage.getItem('goods'));
       console.log('data: ', data);
-    })
+    });
   });
 
-}
+};
 
-getGoods();
+export default getGoods;

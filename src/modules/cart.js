@@ -1,5 +1,5 @@
 const cart = () => {
-  'use strict'
+  'use strict';
 
   const cartBtn = document.querySelector('.button-cart');
   const cartModal = document.getElementById('modal-cart');
@@ -7,11 +7,11 @@ const cart = () => {
 
   cartBtn.addEventListener('click', () => {
     cartModal.style.display = 'flex';
-  })
+  });
 
   closeBtn.addEventListener('click', () => {
     cartModal.removeAttribute('style');
-  })
-}
+  });
+};
 
-cart();
+export default cart;
