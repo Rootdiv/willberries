@@ -10,6 +10,8 @@ const cart = () => {
   const cartTotal = document.querySelector('.card-table__total');
   const nameCustomer = modalForm.querySelector('[name="nameCustomer"]');
   const phoneCustomer = modalForm.querySelector('[name="phoneCustomer"]');
+  const cartBuy = modalForm.querySelector('.cart-buy');
+  cartBuy.disabled = true;
 
   const resetCart = () => {
     cartTable.textContent = '';
@@ -125,8 +127,10 @@ const cart = () => {
     }).catch(error => console.error(error));
   });
 
-
   cartModal.addEventListener('click', event => {
+    if (nameCustomer.value.trim() !== '' && phoneCustomer.value.trim() !== '') {
+      cartBuy.disabled = false;
+    }
     const target = event.target;
     if (!target.closest('.modal') && target.classList.contains('overlay')) {
       cartModal.removeAttribute('style');
