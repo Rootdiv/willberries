@@ -12,7 +12,7 @@ const search = () => {
     fetch('https://wildberris-js-default-rtdb.firebaseio.com/db.json')
       .then(response => response.json())
       .then(data => {
-        const array = data.filter(good => good.name.toLocaleString().includes(value.toLocaleString()));
+        const array = data.filter(good => good.name.toLowerCase().includes(value.toLowerCase()));
         localStorage.setItem('goods', JSON.stringify(array));
         if (!window.location.pathname.includes('goods.html')) {
           window.location.href = 'goods.html';
