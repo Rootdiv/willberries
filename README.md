@@ -1,2 +1,2 @@
-# willberries-js
-Интенсив "Свой Willberries JS" от Glo Academy
+# willberries
+Интенсив "Свой Willberries на JS" от Glo Academy
